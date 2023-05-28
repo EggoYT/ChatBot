@@ -23,17 +23,20 @@ public class Main {
 		System.out.println("Запрос принят. Ожидайте ответа...");
 		c_output.write(companyId + "\n");
 		c_output.write(userId + "\n");
+		
 		c_output.write(Long.toString(new Timestamp(System.currentTimeMillis()).getTime()) + "\n");
 		c_output.write(request + "\n");
 		c_output.flush();
 		
 			int is_good = Integer.parseInt(c_input.readLine());
 			String answer = c_input.readLine();
+			String url = c_input.readLine();
 			while(c_input.ready())
 				c_input.read();
 			try {
 				if(is_good == 0) {
 					System.out.println(answer);
+					System.out.println(url);
 					
 					if(deep < 1) {
 						System.out.println("Желаете уточнить запрос?");
